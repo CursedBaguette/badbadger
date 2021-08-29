@@ -35,3 +35,7 @@ code {
   background-repeat: no-repeat;
   margin-top: 2px;
 }
+
+#root{
+  background-color: red !important;
+}

@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pizza {
+  width: 50px;
+  height: 50px;
+  right: 0px;
+  margin: 1px;
+}
+
+.carter {
+  width: 30px;
+  height: 30px;
+}
+
+.button1 {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: honeydew !important;
+  background-image: url("./Components/Images/cart.png")!important;
+  background-size: 25px;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  margin-top: 2px;
+}

@@ -9,8 +9,7 @@ import ItemListContainer from './Components/Container/ItemListContainer'
 function App() {
   return (
     <div>
-      <boots1 />
-      <NavBar />
+    <NavBar />
     <ItemListContainer mensaje="Viva el vino" />
     </div>
   );

@@ -1,12 +1,34 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
+import ListaItems from '../Shop/listaitems';
+import { getFetch } from '../Shop/shopbd';
+import loguito from '../Images/pizita.gif';
 
 
+function Pizza(){
+    const [pizzaState, setPizza] = useState ([]);
+    const [loadingState, setLoading] = useState(true);
 
-function ItemListContainer(titulo) {
-    return (
-        <>
-        <h1>{titulo.mensaje}</h1> 
-        </>
-    )
+
+    useEffect(() => {
+        getFetch.then((itm)=>{
+            setPizza(itm);
+            setLoading(false);
+        })
+    }, []);
+
+
+return (
+<div>
+    { loadingState ? ( <img src={loguito}/>)
+    :(
+        <ListaItems pizza={pizzaState} />
+    )}
+
+</div>
+)
+
+
 }
-export default ItemListContainer;
+
+
+export default Pizza;

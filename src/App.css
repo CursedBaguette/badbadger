@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.cards{
+  width: 18rem;
+  background-color: rgb(14, 10, 10)
+}
+
+#root{
+  background-color: black!important;
+}
+
+body{
+  background-color: black;
+}

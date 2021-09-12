@@ -39,13 +39,45 @@
 
 .cards{
   width: 18rem;
-  background-color: rgb(14, 10, 10)
+  background-color: black;
+  margin: 10px;
+  padding: 1px;
+  border: silver 1px solid;
+  color: white!important;
 }
-
+.card-img-top{
+  width: auto!important;
+  height: 10rem!important;
+}
 #root{
-  background-color: black!important;
+  background-color: rgb(14, 10, 10)!important
 }
 
 body{
-  background-color: black;
+  background-color: rgb(14, 10, 10)
+}
+
+.links{
+  text-decoration: none;
+  color: silver;
+}
+.links:hover{
+  text-decoration: white;
+  color: white;
+
+}
+.links:active{
+  text-decoration: white;
+  color: white;
+  text-shadow: white 10px;
+  font-weight: bold;
+}
+
+.cartero {
+  margin-top: 0px;
+  margin-left: -3px;
+  width: 35px;
+  height: 37.5px;
+  background-color: white;
+  border: solid 1px orange;
 }

@@ -1,5 +1,6 @@
 //import cart from '../Images/cart.png';
 import * as ReactBootStrap from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function NabSearch (){
@@ -13,7 +14,7 @@ return (
   aria-label="Search"
   id="inputName4"
 />
-<ReactBootStrap.Button className="button1"></ReactBootStrap.Button>
+<Link to="/cart"><img src="Productos/cart.png" className="cartero" alt="asd" /></Link>
 </ReactBootStrap.Form>
 </>
 );

@@ -7,8 +7,9 @@ import { useParams } from "react-router-dom"
 function Pizza() {
   const [pizzaState, setPizza] = useState([]);
   const [loadingState, setLoading] = useState(true);
-  const { morfi } = useParams();
-console.log(morfi)
+  const { morfi} = useParams();
+
+
   useEffect(() => {
 
     if (morfi) {
@@ -16,7 +17,7 @@ console.log(morfi)
         setPizza(itm.filter((tipo) => tipo.categoria === morfi));
         setLoading(false);
       });
-    } else {    
+    } else{    
       getFetch.then((itm) => {
       setPizza(itm);
       setLoading(false);

@@ -81,3 +81,9 @@ body{
   background-color: white;
   border: solid 1px orange;
 }
+
+.btn{
+  width: justify !important;
+  height: min-content!important;
+  text-size-adjust: auto!important;
+}

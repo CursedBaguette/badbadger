@@ -4,6 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar/Navbar";
 import Pizza from "./Components/Container/ItemListContainer";
 import Carrito from "./Components/Container/cartcontainer";
+import Itemdetailconteiner from "./Components/Container/itemdetailconteiner";
+
+
+
+
 function App() {
   return (
     <>
@@ -12,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Pizza} />
           <Route exact path="/cat/:morfi" component={Pizza} />
+          <Route exact path="/cat/:morfi/:iditem" component={Itemdetailconteiner} />
           <Route exact path="/cart" component={Carrito} />
         </Switch>
       </Router>

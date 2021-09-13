@@ -14,7 +14,7 @@ return (
   aria-label="Search"
   id="inputName4"
 />
-<Link to="/cart"><img src="Productos/cart.png" className="cartero" alt="asd" /></Link>
+<Link to="/cart"><img src="Productos/cart.png" className="cartero" alt="carrito" /></Link>
 </ReactBootStrap.Form>
 </>
 );

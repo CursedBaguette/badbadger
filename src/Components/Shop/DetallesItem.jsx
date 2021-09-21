@@ -13,10 +13,11 @@ export default function DetallesItem({detalle123}) {
 
 
 
-                <div className="card cards">
-                    <h1>{unidad.producto}</h1>
-                    <h2>{unidad.descripcion}</h2>
-                    <ItemCount test123={unidad} initial={1} />
+                <div className="card cardsdetalles d-flex justify-content-center">
+                    <h1 className="titulos123" align="center">{unidad.producto}</h1>
+                    <h4 className="titulos123" align="center">{unidad.descripcion}</h4>
+                    <img className="card-img-top2" src={unidad.foto} alt="cap" />
+                    <div align="right" className="titulos123"><ItemCount test123={unidad} initial={1} /></div>
                 </div>
 
             )) }

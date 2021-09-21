@@ -45,6 +45,38 @@
   border: silver 1px solid;
   color: white!important;
 }
+
+.cardsdetalles{
+  width: 18rem;
+  background-color: black;
+  margin: 10px;
+  padding: 1px;
+  border: silver 1px solid;
+  color: white!important;
+  width: 30%;
+  height: 70%;
+}
+
+.precio1{
+  background-color: black;
+  margin: 10px;
+  padding: 1px;
+  padding-right: 10px;
+  border: silver 1px solid;
+  color: white!important;
+  max-width: 15%;
+}
+
+.card-img-top2{
+  width: auto!important;
+  /*max-width: 15rem;*/
+  height: auto!important;
+  margin: 15%;
+}
+.titulos123{
+  margin: 20px;
+}
+
 .card-img-top{
   width: auto!important;
   height: 10rem!important;

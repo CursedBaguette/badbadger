@@ -11,10 +11,10 @@ function Items({ pizza }) {
                     <img className="card-img-top" src={pizza.foto} alt="cap" />
                     <div className="card-body">
                         <h5 className="card-title">{pizza.producto}</h5>
-                        <p className="card-text">{pizza.precio}</p>
+                        <p className="card-text">$ {pizza.precio}</p>
                         <div className="d-flex justify-content-around">
                         <Link to={linkero} className="btn btn-primary">Ingredientes</Link>
-                        <Link to='/cart/' className="btn btn-primary">Comprar</Link>
+                     
                         </div>
                     </div>
                 </div>
@@ -22,5 +22,5 @@ function Items({ pizza }) {
     )
 }
 
-
+//   <Link to='/cart/' className="btn btn-primary">Comprar</Link>
 export default Items

@@ -4,7 +4,6 @@ import loguito from "../Images/pizita.gif";
 import { useParams } from "react-router-dom"
 import DetallesItem from "../Shop/DetallesItem";
 
-
 export default function Itemdetailconteiner() {
 
   const [detalleState, setDetalle] = useState([]);
@@ -28,6 +27,7 @@ export default function Itemdetailconteiner() {
   return (
     <div className="d-flex justify-content-center">
       {loadingState ? <img src={loguito} alt="asd"/> : <DetallesItem detalle123={detalleState} />}
+      
     </div>
   );
 }

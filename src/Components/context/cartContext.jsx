@@ -36,9 +36,11 @@ export const CartContextProvider = ({ children }) => {
 
   const isInCart = (id) => cart.find((prods) => prods.itens === id);
 
+  const clearCart = () => SetCart([])
+
   console.log("carrito", cart);
   return (
-    <CartContext.Provider value={{ cart, addItem }}>
+    <CartContext.Provider value={{ cart, addItem, clearCart }}>
       {children}
     </CartContext.Provider>
   );

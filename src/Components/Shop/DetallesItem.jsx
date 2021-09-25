@@ -7,7 +7,7 @@ export default function DetallesItem({detalle123}) {
     const {addItem} = CartContextUse();
 
     const onAdd = (qty) => {
-                addItem(detalle123, qty);
+            addItem(detalle123, qty)
     }
 
     return (

@@ -72,5 +72,7 @@ const Shopbd = [
 export const getFetch = new Promise((resolve) => {
     setTimeout(() => {
         resolve(Shopbd);
-    }, 3250);
+    }, 10);
 });
+
+//3250

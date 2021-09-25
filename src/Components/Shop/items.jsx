@@ -13,7 +13,7 @@ function Items({ pizza }) {
                         <h5 className="card-title">{pizza.producto}</h5>
                         <p className="card-text">$ {pizza.precio}</p>
                         <div className="d-flex justify-content-around">
-                        <Link to={linkero} className="btn btn-primary">Ingredientes</Link>
+                        <Link to={linkero} className="btn btn-primary">Comprar</Link>
                      
                         </div>
                     </div>

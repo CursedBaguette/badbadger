@@ -5,13 +5,14 @@ import NavBar from "./Components/NavBar/Navbar";
 import Pizza from "./Components/Container/ItemListContainer";
 import Carrito from "./Components/Container/cartcontainer";
 import Itemdetailconteiner from "./Components/Container/itemdetailconteiner";
-
+import { CartContextProvider } from "./Components/context/cartContext";
 
 
 
 function App() {
   return (
     <>
+    <CartContextProvider>
       <Router>
         <NavBar />
         <Switch>
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/cart" component={Carrito} />
         </Switch>
       </Router>
+      </CartContextProvider>
     </>
   );
 }

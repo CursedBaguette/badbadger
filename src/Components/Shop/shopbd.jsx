@@ -23,7 +23,7 @@ const Shopbd = [
         producto: "Lo Que sobro",
         precio: 5,
         foto: "/Productos/detodo.jpg",
-        descripcion: "TMasa, salsa, queso y todo lo que sobra de otras pizas arriba"
+        descripcion: "Masa, salsa, queso y todo lo que sobra de otras pizas arriba"
     },
     {
         id: "4",

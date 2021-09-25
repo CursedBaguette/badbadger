@@ -19,25 +19,25 @@ const ItemCount = ({ initial, onAdd, test123 }) => {
     }
   }
 
+  const agregarCarrito = () => {
+    onAdd(count);
+  };
+
   /** Funcion que debe editarse para exportar la cantidad al carrrito **/
   function onAdd(contar) {
     alert(`${contar * test123.precio} Pesos`);
   }
   /** Funcion que debe editarse para exportar la cantidad al carrrito **/
 
-  const agregarCarrito = () => {
-    onAdd(count);
-  };
-
   var precioAB = count * test123.precio;
 
   return (
     <div>
-      <button onClick={restar} class="btn btn-dark">
+      <button onClick={restar} className="btn btn-dark">
         -
       </button>
       <label className="titulos123 ">{count}</label>
-      <button onClick={sumar} class="btn btn-dark">
+      <button onClick={sumar} className="btn btn-dark">
         +
       </button>
 

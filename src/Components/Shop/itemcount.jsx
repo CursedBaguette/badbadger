@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({ initial, onAdd, test123 }) => {
+
+const ItemCount = ({ initial, onAdd, test123, removeItem }) => {
+
+
   const [count, setCount] = useState(initial);
 
   function sumar() {
@@ -31,7 +34,14 @@ const ItemCount = ({ initial, onAdd, test123 }) => {
     onAdd(count);
   };
   
+
+const quitar = () =>{
+  removeItem(count);
+}
+
   var precioAB = count * test123.precio;
+
+
 
   return (
     <div>
@@ -48,6 +58,9 @@ const ItemCount = ({ initial, onAdd, test123 }) => {
           Agregar{" "}
         </button>
       
+        <button onClick={quitar} className="titulos123 btn btn-dark">
+          Remover{" "}
+        </button>
       <div className="precio1">$ {precioAB} Pesos</div>
     </div>
   );

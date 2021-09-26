@@ -9,6 +9,8 @@ export const CartContextUse = () => {
 export const CartContextProvider = ({ children }) => {
   const [cart, SetCart] = useState([]);
 
+  const isInCart = (id) => cart.find((prods) => prods.itens === id);
+
   const addItem = (itens, cantidad) => {
     if (isInCart(itens)) {
       const cantidad2 = [...cart];
@@ -34,13 +36,36 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
-  const isInCart = (id) => cart.find((prods) => prods.itens === id);
 
   const clearCart = () => SetCart([])
 
+  const removeItem = (itens, cantidad) => {
+    if (isInCart(itens)) {
+      const cantidad2 = [...cart];
+      cantidad2.map((element) => {
+        if (element.itens === itens) {
+          element.cantidad -= cantidad;
+          console.log(element.cantidad);
+          if (element.cantidad <= 0){
+              alert('No hay mas de este objeto agregado')
+              element.cantidad = 0;
+             // delete element.itens
+              
+          } else{
+            return SetCart(cantidad2);
+          }
+        }
+        return SetCart(cantidad2);
+      });
+      console.log("removiendo productonop");
+    
+  };
+  }
+ 
+
   console.log("carrito", cart);
   return (
-    <CartContext.Provider value={{ cart, addItem, clearCart }}>
+    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem }}>
       {children}
     </CartContext.Provider>
   );

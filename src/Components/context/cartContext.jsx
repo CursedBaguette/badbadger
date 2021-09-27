@@ -9,13 +9,16 @@ export const CartContextUse = () => {
 export const CartContextProvider = ({ children }) => {
   const [cart, SetCart] = useState([]);
 
-  const isInCart = (id) => cart.find((prods) => prods.itens === id);
+  const isInCart = (id) => cart.find((prods) => prods.itens.id === id);
 
   const addItem = (itens, cantidad) => {
-    if (isInCart(itens)) {
+
+    if (isInCart(itens.id)) {
       const cantidad2 = [...cart];
+      
       cantidad2.map((element) => {
-        if (element.itens === itens) {
+
+        if (element.itens.id === itens.id) {
           element.cantidad += cantidad;
           console.log(element.cantidad);
           if (element.cantidad >12){
@@ -25,32 +28,37 @@ export const CartContextProvider = ({ children }) => {
           } else{
             return SetCart(cantidad2);
           }
-        }
+        
+      }
+
         return SetCart(cantidad2);
       });
       console.log("productor ya agregado");
       
     } else 
-    {
+    { 
     return SetCart([...cart, { itens, cantidad }]);
+
     }
-  };
+
+
+
+};
 
 
   const clearCart = () => SetCart([])
 
   const removeItem = (itens, cantidad) => {
-    if (isInCart(itens)) {
+    if (isInCart(itens.id)) {
       const cantidad2 = [...cart];
       cantidad2.map((element) => {
-        if (element.itens === itens) {
+        if (element.itens.id === itens.id) {
           element.cantidad -= cantidad;
           console.log(element.cantidad);
           if (element.cantidad <= 0){
               alert('No hay mas de este objeto agregado')
               element.cantidad = 0;
-             // delete element.itens
-              
+              cantidad2.splice(cantidad2.indexOf(element), 1)
           } else{
             return SetCart(cantidad2);
           }
@@ -61,7 +69,7 @@ export const CartContextProvider = ({ children }) => {
     
   };
   }
- 
+
 
   console.log("carrito", cart);
   return (

@@ -5,15 +5,24 @@ import { CartContextUse } from '../context/cartContext'
 
 export default function DetallesItem({detalle123}) {
     const {addItem, removeItem} = CartContextUse();
-
+    let iterador;
+    detalle123.map((unidad) =>(
+        iterador = unidad
+        ))
 
     const onAdd = (qty) => {
-            addItem(detalle123, qty)
-    }
+            addItem(iterador, qty)
+                            }
 
     const onRemove = (qty) => {
-        removeItem(detalle123, qty)
-}
+        removeItem(iterador, qty)
+                                }
+    
+
+
+
+
+
     return (
         <>
             {detalle123.map((unidad) =>(

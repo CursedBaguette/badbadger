@@ -1,5 +1,5 @@
 import React from "react";
-//import Cartmain from "../Shop/cartmain";
+import Cartmain from "../Shop/cartmain";
 
 
 export default function Carrito() {
@@ -8,7 +8,7 @@ export default function Carrito() {
   
   return (
     <div class="carritou">
-    
+    <Cartmain />
     </div>
   );
 }

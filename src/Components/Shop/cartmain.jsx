@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import { CartContextUse } from '../context/cartContext'
 
 export default function Cartmain() {
@@ -22,4 +22,4 @@ export default function Cartmain() {
         
       </div>
     );
-  }*/
+  }

@@ -119,3 +119,44 @@ body{
   height: min-content!important;
   text-size-adjust: auto!important;
 }
+
+.badge{
+  color:white!important;
+  font-weight: bold!important;
+  text-shadow: 1px 1px 1px 1px white;
+  background: radial-gradient(circle, rgba(255,0,0,1) 50%, rgba(255,0,0,0) 50%)!important; 
+  background-position-y: -6px!important;
+  background-position-x: 1px;
+  background-repeat: no-repeat;
+  height: 37.5px;
+}
+
+.cartlista{
+
+    width: auto;
+    background-color: black;
+    margin: 10px;
+    padding: 1px;
+    border: silver 1px solid;
+    color: white!important;
+  
+}
+
+.card-img-cart{
+  width: 70px!important;
+  height: 70px!important;
+}
+
+.cartbut{
+  width: 100px;
+  position: absolute;
+  margin-top:15px;
+  right: 20px!important;
+}
+
+.textocart{
+  margin-left: 30px;
+  margin-right: 20px;
+  padding-top: 20px;
+
+}

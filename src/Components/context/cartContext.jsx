@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
@@ -8,7 +8,8 @@ export const CartContextUse = () => {
 
 export const CartContextProvider = ({ children }) => {
   const [cart, SetCart] = useState([]);
-
+  const [badge, SetBadge] = useState(0);
+  
   const isInCart = (id) => cart.find((prods) => prods.itens.id === id);
 
   const addItem = (itens, cantidad) => {
@@ -20,7 +21,7 @@ export const CartContextProvider = ({ children }) => {
 
         if (element.itens.id === itens.id) {
           element.cantidad += cantidad;
-          console.log(element.cantidad);
+          //console.log(element.cantidad);
           if (element.cantidad >12){
               alert('Maxima cantidad es 12')
               element.cantidad = 12;
@@ -33,7 +34,7 @@ export const CartContextProvider = ({ children }) => {
 
         return SetCart(cantidad2);
       });
-      console.log("productor ya agregado");
+      //console.log("productor ya agregado");
       
     } else 
     { 
@@ -54,7 +55,7 @@ export const CartContextProvider = ({ children }) => {
       cantidad2.map((element) => {
         if (element.itens.id === itens.id) {
           element.cantidad -= cantidad;
-          console.log(element.cantidad);
+          //console.log(element.cantidad);
           if (element.cantidad <= 0){
               alert('No hay mas de este objeto agregado')
               element.cantidad = 0;
@@ -65,15 +66,31 @@ export const CartContextProvider = ({ children }) => {
         }
         return SetCart(cantidad2);
       });
-      console.log("removiendo productonop");
+      //console.log("removiendo productonop");
     
   };
   }
 
+  const removeItem2 = (id) => {
+    const cartFilter = cart.filter((removedor) => removedor.itens.id !== id);
 
-  console.log("carrito", cart);
+    SetCart(cartFilter);
+  };
+
+  const badgeFunction = () => {
+    let badgeFinal = 0;
+    cart.forEach((x) => (badgeFinal += x.cantidad));
+    SetBadge(badgeFinal);
+  };
+
+  useEffect(() => {
+    badgeFunction();
+  }, [cart]);
+
+
+
   return (
-    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem }}>
+    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, removeItem2, badge }}>
       {children}
     </CartContext.Provider>
   );

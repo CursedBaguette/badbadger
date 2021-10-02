@@ -5,11 +5,11 @@ import { CartContextUse } from '../context/cartContext'
 
 export default function DetallesItem({detalle123}) {
     const {addItem, removeItem} = CartContextUse();
-    let iterador;
-    detalle123.map((unidad) =>(
+    let iterador = detalle123;
+    /*detalle123.map((detalle123) =>(
         iterador = unidad
-        ))
-
+        ))*/
+console.log(detalle123)
     const onAdd = (qty) => {
             addItem(iterador, qty)
                             }
@@ -25,21 +25,16 @@ export default function DetallesItem({detalle123}) {
 
     return (
         <>
-            {detalle123.map((unidad) =>(
-
-
-
-
 
                 <div className="card cardsdetalles d-flex justify-content-center">
-                    <h1 className="titulos123" align="center">{unidad.producto}</h1>
-                    <h4 className="titulos123" align="center">{unidad.descripcion}</h4>
-                    <img className="card-img-top2" src={unidad.foto} alt="cap" />
-                    <div align="right" className="titulos123"><ItemCount test123={unidad} initial={1} onAdd={onAdd} removeItem={onRemove} /></div>
+                    <h1 className="titulos123" align="center">{detalle123.producto}</h1>
+                    <h4 className="titulos123" align="center">{detalle123.descripcion}</h4>
+                    <img className="card-img-top2" src={detalle123.foto} alt="cap" />
+                    <div align="right" className="titulos123"><ItemCount test123={iterador} initial={1} onAdd={onAdd} removeItem={onRemove} /></div>
                     
                 </div>
 
-            )) }
+            )
         </>
     )
 }

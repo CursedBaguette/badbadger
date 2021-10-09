@@ -25,7 +25,7 @@ export default function Itemdetailconteiner() {
       .finally(() => setLoading(false));
   }, [iditem]);
   
-  console.log(iditem);
+  
 
   return (
     <div className="d-flex justify-content-center">
@@ -36,37 +36,3 @@ export default function Itemdetailconteiner() {
 }
 
 
-
-//itemdetail
-/*useEffect(() => {
-  const dbQuery = getFirestore();
-
-  dbQuery
-    .collection("items")
-    .doc(idSelector)
-    .get()
-
-    .then((item) => {
-      setProducto({ id: item.id, ...item.data() });
-    })
-    .catch((err) => console.log(err))
-    .finally(() => setLoading(false));
-}, [idSelector]);
-
-console.log(producto);*/
-
-
-   /* if (iditem) {
-      getFetch.then((itm) => {
-        setDetalle(itm.filter((tipo) => tipo.id === iditem));
-        setLoading(false);
-      });
-    } else{    
-      getFetch.then((itm) => {
-      setDetalle(itm);
-      setLoading(false);
-    });}
-  }, [iditem]);
-
-  console.log(iditem)
-  */

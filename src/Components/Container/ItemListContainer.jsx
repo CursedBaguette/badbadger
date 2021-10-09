@@ -15,7 +15,7 @@ function Pizza() {
 
     const dbQuery = getFirestore();
 
-    //condicional positivo
+
     if (morfi !== undefined) { 
   dbQuery
      .collection("items")
@@ -28,9 +28,7 @@ function Pizza() {
      })
     .catch((err) => console.log(err))
      .finally(() => setLoading(false));
-     //condicional positivo
-
-     //condicional negativo
+ 
   }else{
   dbQuery
      .collection("items")
@@ -43,7 +41,7 @@ function Pizza() {
     .catch((err) => console.log(err))
      .finally(() => setLoading(false));
 }
-//condicional negativo
+
 }, [morfi]);
 
 
@@ -59,45 +57,3 @@ export default Pizza;
 
 
 
-/*    const dbQuery = getFirestore()
-
-    dbQuery.collection('items').get()
-    .then(resp => console.log(resp))
-    .catch(err => console.log(err))
-    .finally(()=> setLoading(false))
-*/
-
-
-
-//itemlist
-//   const dbQuery = getFirestore();
-
-//   dbQuery
-//     .collection("items")
-//     .where("categoria", "==", selector)
-//     .get()
-
-//     .then((item) => {
-//       setProductos(
-//         item.docs.map((item) => ({ id: item.id, ...item.data() }))
-//       );
-//     })
-//     .catch((err) => console.log(err))
-//     .finally(() => setLoading(false));
-// }, [selector]);
-
-
-
-    //original
-  /*if (morfi) {
-      getFetch.then((itm) => {
-        setPizza(itm.filter((tipo) => tipo.categoria === morfi));
-        setLoading(false);
-      });
-    } else{    
-      getFetch.then((itm) => {
-      setPizza(itm);
-      setLoading(false);
-    });}
-  }, [morfi]);
- */

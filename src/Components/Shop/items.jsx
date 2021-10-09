@@ -22,5 +22,5 @@ function Items({ pizza }) {
     )
 }
 
-//   <Link to='/cart/' className="btn btn-primary">Comprar</Link>
+
 export default Items

@@ -21,7 +21,7 @@ export const CartContextProvider = ({ children }) => {
 
         if (element.itens.id === itens.id) {
           element.cantidad += cantidad;
-          //console.log(element.cantidad);
+   
           if (element.cantidad >12){
               alert('Maxima cantidad es 12')
               element.cantidad = 12;
@@ -34,7 +34,7 @@ export const CartContextProvider = ({ children }) => {
 
         return SetCart(cantidad2);
       });
-      //console.log("productor ya agregado");
+
       
     } else 
     { 
@@ -55,7 +55,7 @@ export const CartContextProvider = ({ children }) => {
       cantidad2.map((element) => {
         if (element.itens.id === itens.id) {
           element.cantidad -= cantidad;
-          //console.log(element.cantidad);
+
           if (element.cantidad <= 0){
               alert('No hay mas de este objeto agregado')
               element.cantidad = 0;
@@ -66,7 +66,7 @@ export const CartContextProvider = ({ children }) => {
         }
         return SetCart(cantidad2);
       });
-      //console.log("removiendo productonop");
+
     
   };
   }

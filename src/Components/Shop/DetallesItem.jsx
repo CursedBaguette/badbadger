@@ -6,10 +6,8 @@ import { CartContextUse } from '../context/cartContext'
 export default function DetallesItem({detalle123}) {
     const {addItem, removeItem} = CartContextUse();
     let iterador = detalle123;
-    /*detalle123.map((detalle123) =>(
-        iterador = unidad
-        ))*/
-console.log(detalle123)
+
+//console.log(detalle123)
     const onAdd = (qty) => {
             addItem(iterador, qty)
                             }

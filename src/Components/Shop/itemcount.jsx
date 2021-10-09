@@ -53,7 +53,7 @@ const quitar = () =>{
         +
       </button>
 
-      <Link to="/cart/"> </Link>
+     
         <button onClick={agregarCarrito} className="titulos123 btn btn-dark">
           Agregar{" "}
         </button>
@@ -61,7 +61,9 @@ const quitar = () =>{
         <button onClick={quitar} className="titulos123 btn btn-dark">
           Remover{" "}
         </button>
-      <div className="precio1">$ {precioAB} Pesos</div>
+
+      <div className="precio1"> $ {precioAB} Pesos</div>
+      <div><Link to="/cart/"><button className="titulos123 btn btn-dark">Ir al carrito</button></Link></div>
     </div>
   );
 };

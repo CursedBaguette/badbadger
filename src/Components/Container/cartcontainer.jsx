@@ -1,28 +1,24 @@
 import React from "react";
-import Cartformu from "../Shop/cartformu";
 import Cartmain from "../Shop/cartmain";
-import { useState } from "react";
-
+import { CartContextUse } from '../context/cartContext'
 export default function Carrito() {
 
-  const [formulario, Setformulario] = useState(true)
-  
+  const {cart} = CartContextUse();
+  var condit;
+  if (cart.length === 0 ){
+    condit = true
+  }  else {
+    condit = false
+  }
   
   return (
     <>
-    {formulario ?(
-      <>
-         <div class="carritou">
-         <Cartmain />
-        <button onClick={()=>Setformulario(false)}>finalizar compra</button>
-        </div>
-    </>
-     
-    ): (<div class="carritou">
-      <Cartformu />
-    </div>)}
+    <div class="carritou">
+    {condit ? (<p>No tenes nada comprado</p>): (
  
-    
+         <Cartmain /> )}
+     
+         </div>
     </>
   );
 }

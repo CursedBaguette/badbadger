@@ -6,6 +6,7 @@ import Pizza from "./Components/Container/ItemListContainer";
 import Carrito from "./Components/Container/cartcontainer";
 import Itemdetailconteiner from "./Components/Container/itemdetailconteiner";
 import { CartContextProvider } from "./Components/context/cartContext";
+import Cartformu from "./Components/Shop/cartformu";
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/cat/:morfi" component={Pizza} />
           <Route exact path="/cat/:morfi/:iditem" component={Itemdetailconteiner} />
           <Route exact path="/cart" component={Carrito} />
+          <Route exact path="/cart" component={Cartformu} />
         </Switch>
       </Router>
       </CartContextProvider>

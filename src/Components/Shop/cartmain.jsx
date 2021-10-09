@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Cartformu from './cartformu';
 
+
 export default function Cartmain() {
 
    const [formulario, Setformulario] = useState(true)
 
     const {cart, clearCart, removeItem2} = CartContextUse();
-    var listado = [];
+    /*var listado = [];
     listado.itens = [];
-    cart.map(items => {listado = items; return});
+    cart.map(items => {listado = items; return});*/
 
 
     const totalCarrito = cart.map(
@@ -29,7 +30,7 @@ export default function Cartmain() {
 
     return (
       <> <div class="carritou">
-      {formulario ? (      <div>
+       <div>
        {cart.map((items2)=> (
           <>
           
@@ -47,11 +48,21 @@ export default function Cartmain() {
          <div>
         
        <h5>El total de tu carrito es:  ${sumaTotal}</h5>
-       <button onClick={clearCart} className="btn btn-dark">Limpiar carrito </button><Link to="/"><button className="btn btn-dark">Volver</button></Link>
-       <button className="btn btn-dark" onClick={()=>Setformulario(false)}>finalizar compra</button>
+       
+       
        
         </div>
-          </div>) : <Cartformu />}
+          </div>{formulario ? 
+          (<>
+          <a href="#formcarr"><button className="btn btn-dark btn-dark2" onClick={()=>Setformulario(false)}>Finalizar Compra</button></a>
+          <button onClick={clearCart} className="btn btn-dark btn-dark2">Limpiar carrito </button>
+          <Link to="/"><button className="btn btn-dark2 btn-dark">Volver</button></Link>
+          </>) :
+           (<>
+           <div id="formcarr">
+          <Cartformu /> <button type="submit" class="btn btn-dark btn-dark2 formcenter" onClick={()=>Setformulario(true)} >Volver</button>
+          </div>
+          </> )}
 
  
       </div>

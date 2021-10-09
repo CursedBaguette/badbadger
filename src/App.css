@@ -160,3 +160,22 @@ body{
   padding-top: 20px;
 
 }
+
+.formulario12{
+  border: silver 1px solid;
+  color: white!important;
+  padding: 15px;
+  width: 930px!important;
+  
+}
+
+.inputForm1{
+  width: 900px!important;
+  
+  }
+
+
+  
+  .formcenter{
+    margin-left: 15%!important;
+  }

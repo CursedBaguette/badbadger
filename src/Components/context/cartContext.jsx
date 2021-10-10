@@ -9,7 +9,26 @@ export const CartContextUse = () => {
 export const CartContextProvider = ({ children }) => {
   const [cart, SetCart] = useState([]);
   const [badge, SetBadge] = useState(0);
+  const [cartAmount, setCartAmount] = useState("");
+  const [cartTotal, setCartTotal] = useState("");
+
+  useEffect(() => {
+    const total = cart.reduce(
+      (acc, unidad) => acc + unidad.cantidad * unidad.itens.precio,
+      0
+    );
+    setCartTotal(total);
+  }, [cart]);
   
+  useEffect(() => {
+    const amount = cart.reduce((acc, itens) => acc + itens.cantidad, 0);
+    setCartAmount(amount);
+  }, [cart]);
+
+
+
+
+
   const isInCart = (id) => cart.find((prods) => prods.itens.id === id);
 
   const addItem = (itens, cantidad) => {
@@ -85,12 +104,17 @@ export const CartContextProvider = ({ children }) => {
 
   useEffect(() => {
     badgeFunction();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
 
 
 
+
+
+
+
   return (
-    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, removeItem2, badge }}>
+    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, removeItem2, badge, cartAmount, cartTotal }}>
       {children}
     </CartContext.Provider>
   );

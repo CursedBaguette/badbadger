@@ -4,12 +4,14 @@ import {  getFirestore } from '../../services/getFirebase';
 import { CartContextUse } from '../context/cartContext'
 import firebase from "firebase";
 import "firebase/firestore";
+import { Link } from 'react-router-dom';
+
 
 export default function Cartformu() {
 
 
-
-  const {cart, cartTotal, cartAmount} = CartContextUse();
+  
+  const {cart, cartTotal, cartAmount, clearCart} = CartContextUse();
 
     
 
@@ -24,7 +26,7 @@ export default function Cartformu() {
   });
   const handleOnSubmit = () => {
     let orden = {};
-
+ 
     orden.buyer = formData;
     orden.total = cartTotal;
     orden.date = firebase.firestore.Timestamp.fromDate(new Date());
@@ -39,8 +41,13 @@ export default function Cartformu() {
     const db = getFirestore();
     db.collection("orders")
       .add(orden)
-      .then((resp) => alert(resp.id));
+      .then((orden) => alert(`Gracias por su compra. Su compra es ${orden.id}`))
+      .finally(clearCart());
+      
+  
+      
   };
+
   const handleOnChange = (change) => {
     setFormData({
       ...formData,
@@ -64,8 +71,8 @@ export default function Cartformu() {
             <form onChange={handleOnChange}>
   <div className="form-row ">
     <div className="form-group col-md-6">
-      <label htmlFor="email">Email (opcional)</label>
-      <input type="email" defaultValue={formData.email} name="email" className="form-control inputForm1" id="inputEmail4" placeholder="Email (opcional)" />
+      <label htmlFor="email">Email</label>
+      <input type="email" defaultValue={formData.email} name="email" className="form-control inputForm1" id="inputEmail4" placeholder="Email" />
     </div>
     <div className="form-group col-md-6">
       <label htmlFor="inputPhone4">Teléfono</label>
@@ -87,9 +94,7 @@ export default function Cartformu() {
 
 
 {validacionForm ? <></> :
-<button type="submit" className="btn btn-dark btn-dark2" onClick={handleOnSubmit}>Comprar</button> 
-
-
+<Link to="/"><button type="submit" className="btn btn-dark btn-dark2" onClick={handleOnSubmit}>Comprar</button></Link>
 }
 
         </div>

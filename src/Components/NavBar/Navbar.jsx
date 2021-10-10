@@ -34,7 +34,7 @@ return (
               </NavDropdown.Item>
              
             </NavDropdown>
-    <Nav.Link as={Link} to="/" className="links">Contacto</Nav.Link>
+
     </Nav>
 
         <NabSearch />

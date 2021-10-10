@@ -92,6 +92,7 @@ body{
 .links{
   text-decoration: none;
   color: silver;
+  background-color: #212121 !important;
 }
 .links:hover{
   text-decoration: white;
@@ -104,6 +105,11 @@ body{
   text-shadow: white 10px;
   font-weight: bold;
 }
+
+.dropdown-menu{
+  background-color: #212121 !important;
+}
+
 
 .cartero {
   margin-top: 0px;

@@ -18,7 +18,7 @@ export default function Carrito() {
  
          <Cartmain /> )}
      
-         </div>
+      </div>
     </>
   );
 }

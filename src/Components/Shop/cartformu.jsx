@@ -41,7 +41,7 @@ export default function Cartformu() {
     const db = getFirestore();
     db.collection("orders")
       .add(orden)
-      .then((orden) => alert(`Gracias por su compra. Su compra es ${orden.id}`))
+      .then((orden2) => alert(`Gracias por su compra. Su id de Compra es ${orden2.id}`))
       .finally(clearCart());
       
   

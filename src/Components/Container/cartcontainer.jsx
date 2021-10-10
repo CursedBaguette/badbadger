@@ -13,7 +13,7 @@ export default function Carrito() {
   
   return (
     <>
-    <div class="carritou">
+    <div className="carritou">
     {condit ? (<p>No tenes nada comprado</p>): (
  
          <Cartmain /> )}

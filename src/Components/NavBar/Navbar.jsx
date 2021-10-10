@@ -8,33 +8,33 @@ function NavBar() {
 return (
 <>
   <Navbar bg="dark" variant="dark">
-    <Container>
+    <Container >
 
     <Nav className="me-auto">
-    <Nav.Link><Link to="/" className="links">Home</Link></Nav.Link>
+    <Nav.Link as={Link} to="/" className="links">Home</Nav.Link>
     <NavDropdown title="Morfi" id="collasible-nav-dropdown">
-              <Link to="/cat/Pizza" className="links">
-                <NavDropdown.Item href="#action/3.1">
+              
+                <NavDropdown.Item as={Link} to="/cat/Pizza" className="links"  >
                   Pizza
                 </NavDropdown.Item>
-              </Link>
-              <Link to="/cat/Empanada" className="links">
-                <NavDropdown.Item href="#action/3.2">
+             
+              
+                <NavDropdown.Item as={Link} to="/cat/Empanada" className="links">
                   Empanadas
                 </NavDropdown.Item>
-              </Link>
-              <Link to="/cat/Sushi" className="links">
-                <NavDropdown.Item href="#action/3.3">
+              
+         
+                <NavDropdown.Item as={Link} to="/cat/Sushi" className="links">
                       Sushis
               </NavDropdown.Item>
-              </Link>
-              <Link to="/cat/Postre" className="links">
-                <NavDropdown.Item href="#action/3.3">
+              
+            
+                <NavDropdown.Item as={Link} to="/cat/Postre" className="links">
                       Postres
               </NavDropdown.Item>
-              </Link>
+             
             </NavDropdown>
-    <Nav.Link><Link to="/" className="links">Contacto</Link></Nav.Link>
+    <Nav.Link as={Link} to="/" className="links">Contacto</Nav.Link>
     </Nav>
 
         <NabSearch />

@@ -48,18 +48,15 @@ export default function Cartformu() {
     });
   };
 
-  var validacionForm;
+  let validacionForm;
 
-  if(formData.email === "" || formData.Telefono === "" || formData.Direccion === "" || formData.Pago === "" ) {
+  if(!/\S+@\S+.\S+/.test(formData.email) || formData.Telefono === "" || formData.Direccion === "" || formData.Pago === "" ) {
     validacionForm = true;
   } else {
     validacionForm = false;
   }
 
-  /*function alerta1(){
-    alert("Por favor complete todos los datos")
-  
-  }*/
+
 
   
     return (
@@ -67,21 +64,21 @@ export default function Cartformu() {
             <form onChange={handleOnChange}>
   <div className="form-row ">
     <div className="form-group col-md-6">
-      <label htmlFor="email">Email</label>
-      <input type="email" value={formData.email} name="email" className="form-control inputForm1" id="inputEmail4" placeholder="Email" required="required" />
+      <label htmlFor="email">Email (opcional)</label>
+      <input type="email" defaultValue={formData.email} name="email" className="form-control inputForm1" id="inputEmail4" placeholder="Email (opcional)" />
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPhone4">Teléfono</label>
-      <input type="number" value={formData.Telefono} name="Telefono" className="form-control inputForm1" id="inputPhone4" placeholder="Teléfono" required="required" />
+    <div className="form-group col-md-6">
+      <label htmlFor="inputPhone4">Teléfono</label>
+      <input type="number" defaultValue={formData.Telefono} name="Telefono" className="form-control inputForm1" id="inputPhone4" placeholder="Teléfono" required="required" />
     </div>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label htmlFor="inputAddress">Dirección</label>
-    <input type="text" value={formData.Direccion} name="Direccion" className="form-control inputForm1" id="inputAddress" placeholder="Calle Falsa 123" required="required" />
+    <input type="text" defaultValue={formData.Direccion} name="Direccion" className="form-control inputForm1" id="inputAddress" placeholder="Calle Falsa 123" required="required" />
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label htmlFor="inputAddress">Tarjeta de  Crédito</label>
-    <input type="number" value={formData.Pago} name="Pago" className="form-control inputForm1" id="inputAddress" placeholder="123 456 789" required="required" />
+    <input type="number" defaultValue={formData.Pago} name="Pago" className="form-control inputForm1" id="inputAddress" placeholder="123 456 789" required="required" />
   </div>
 
 

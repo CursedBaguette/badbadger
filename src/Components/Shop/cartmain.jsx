@@ -26,7 +26,7 @@ export default function Cartmain() {
           <img className="card-img-cart" src={items2.itens.foto} alt="cap" />
           <h5 className="textocart">{items2.itens.producto}</h5>
           <p className="textocart">$ {items2.itens.precio*items2.cantidad}</p>
-          <p className="textocart">Cantidad del producto:{items2.cantidad}</p>
+          <p className="textocart">Cantidad del producto: {items2.cantidad}</p>
           <button onClick={()=>removeItem2(items2.itens.id)} className="cartbut btn-dark"> Eliminar </button>
           
           </div>

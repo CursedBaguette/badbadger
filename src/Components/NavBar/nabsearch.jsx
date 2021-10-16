@@ -10,13 +10,7 @@ function NabSearch (){
 return (
     <>
 <ReactBootStrap.Form className="d-flex">
-<ReactBootStrap.FormControl
-  type="search"
-  placeholder="Search"
-  className="mr-2"
-  aria-label="Search"
-  id="inputName4"
-/>
+
 <Link to="/cart"> 
 { cart.length === 0 ? <img src="/Productos/cart.png" className="cartero" alt="" /> 
             :

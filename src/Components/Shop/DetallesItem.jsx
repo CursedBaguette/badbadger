@@ -7,7 +7,7 @@ export default function DetallesItem({detalle123}) {
     const {addItem, removeItem} = CartContextUse();
     let iterador = detalle123;
 
-//console.log(detalle123)
+
     const onAdd = (qty) => {
             addItem(iterador, qty)
                             }

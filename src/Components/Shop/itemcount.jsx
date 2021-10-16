@@ -26,7 +26,7 @@ const ItemCount = ({ initial, onAdd, test123, removeItem }) => {
 
   /** Funcion que debe editarse para exportar la cantidad al carrrito **/
   function precioTotal(contar) {
-    //alert(`${contar * test123.precio} Pesos`);
+
   }
   /** Funcion que debe editarse para exportar la cantidad al carrrito **/
   const agregarCarrito = () => {

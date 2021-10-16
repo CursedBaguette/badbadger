@@ -1,4 +1,3 @@
-//import cart from '../Images/cart.png';
 import * as ReactBootStrap from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContextUse } from '../context/cartContext';

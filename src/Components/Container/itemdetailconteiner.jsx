@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-//import { getFetch } from "../Shop/shopbd";
 import loguito from "../Images/pizita.gif";
 import { useParams } from "react-router-dom"
 import DetallesItem from "../Shop/DetallesItem";

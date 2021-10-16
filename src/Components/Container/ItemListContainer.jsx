@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ListaItems from "../Shop/listaitems";
-//import { getFetch } from "../Shop/shopbd";
 import loguito from "../Images/pizita.gif";
 import { useParams } from "react-router-dom"
 import { getFirestore } from "../../services/getFirebase";

@@ -75,4 +75,3 @@ export const getFetch = new Promise((resolve) => {
     }, 10);
 });
 
-//3250

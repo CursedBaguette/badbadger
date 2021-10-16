@@ -1,4 +1,3 @@
-import React from 'react'
 import { CartContextUse } from '../context/cartContext'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';

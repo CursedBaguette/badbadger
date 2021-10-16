@@ -1,4 +1,3 @@
-import React from 'react'
 import ItemCount from './itemcount'
 import { CartContextUse } from '../context/cartContext'
 

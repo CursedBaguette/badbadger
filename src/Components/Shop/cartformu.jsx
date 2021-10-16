@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react';
 import {  getFirestore } from '../../services/getFirebase';
 import { CartContextUse } from '../context/cartContext'

@@ -1,4 +1,3 @@
-import React from "react";
 import Cartmain from "../Shop/cartmain";
 import { CartContextUse } from '../context/cartContext'
 export default function Carrito() {

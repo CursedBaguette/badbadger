@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const CartContext = createContext();
 
@@ -11,6 +13,7 @@ export const CartContextProvider = ({ children }) => {
   const [badge, SetBadge] = useState(0);
   const [cartAmount, setCartAmount] = useState("");
   const [cartTotal, setCartTotal] = useState("");
+  const MySwal = withReactContent(Swal)
 
   useEffect(() => {
     const total = cart.reduce(
@@ -42,7 +45,13 @@ export const CartContextProvider = ({ children }) => {
           element.cantidad += cantidad;
    
           if (element.cantidad >12){
-              alert('Maxima cantidad es 12')
+            MySwal.fire({
+              title: <i className="sweet123">Maxima cantidad del mismo producto es 12</i>,
+              background: '#2b2a33',
+              icon: 'error',
+              confirmButtonColor: '#1c1f23'
+              
+            })
               element.cantidad = 12;
               
           } else{
@@ -76,7 +85,13 @@ export const CartContextProvider = ({ children }) => {
           element.cantidad -= cantidad;
 
           if (element.cantidad <= 0){
-              alert('No hay mas de este objeto agregado')
+            MySwal.fire({
+              title: <i className="sweet123">Producto ya no se encuentra en el carrito</i>,
+              background: '#2b2a33',
+              icon: 'info',
+              confirmButtonColor: '#1c1f23'
+              
+            })
               element.cantidad = 0;
               cantidad2.splice(cantidad2.indexOf(element), 1)
           } else{
@@ -114,7 +129,7 @@ export const CartContextProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, removeItem2, badge, cartAmount, cartTotal }}>
+    <CartContext.Provider value={{ cart, addItem, clearCart, removeItem, removeItem2, badge, cartAmount, cartTotal, MySwal }}>
       {children}
     </CartContext.Provider>
   );

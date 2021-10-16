@@ -5,8 +5,7 @@ import { CartContextUse } from '../context/cartContext'
 import firebase from "firebase";
 import "firebase/firestore";
 import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+
 
 
 
@@ -14,7 +13,7 @@ export default function Cartformu() {
 
 
   
-  const {cart, cartTotal, cartAmount, clearCart} = CartContextUse();
+  const {cart, cartTotal, cartAmount, clearCart, MySwal} = CartContextUse();
 
     
 
@@ -29,7 +28,7 @@ export default function Cartformu() {
   });
   const handleOnSubmit = () => {
     let orden = {};
-    const MySwal = withReactContent(Swal)
+
 
 
 
@@ -52,9 +51,12 @@ export default function Cartformu() {
     db.collection("orders")
       .add(orden)
       .then((orden2) => MySwal.fire({
-        title: <strong>Gracias por su compra</strong>,
-        html: <i>Su id de compra es {orden2.id}</i>,
-        icon: 'success'
+        title: <strong className="sweet123">Gracias por su compra</strong>,
+        html: <i className="sweet123">Su id de compra es {orden2.id}</i>,
+        background: '#2b2a33',
+        icon: 'success',
+        confirmButtonColor: '#1c1f23'
+        
       }))
       .finally(clearCart());
       

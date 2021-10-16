@@ -27,4 +27,4 @@ Se abre una pestaña del navegador en el puerto 3000:
 Recordar que tiene un backend realizado con Firebase, por si quieren descargar y correr este proyecto, tienen que generar su backend en firebase.
 
 ## VIDEO
-Hacé click [ACA](https://www.youtube.com/watch?v=6-zm3eOkLoc) para ver un video de demostración del proceso de compra de la app.
+Hacé click [ACA](https://www.youtube.com/watch?v=-A6X22YkFLQ) para ver un video de demostración del proceso de compra de la app.

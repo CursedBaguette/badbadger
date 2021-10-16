@@ -82,7 +82,6 @@ export default function Cartformu() {
   }
 
 
-
   
     return (
         <div  className="formcenter formulario12">

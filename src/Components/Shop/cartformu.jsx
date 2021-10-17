@@ -73,9 +73,10 @@ export default function Cartformu() {
   };
 
   let validacionForm;
+  let validacionMail = /\S+@\S+.\S+/;
   let validacionTarjeta = /^4[0-9]{12}(?:[0-9]{3})?$/
 
-  if(!/\S+@\S+.\S+/.test(formData.email) || formData.Telefono === "" || formData.Direccion === "" || !validacionTarjeta.test(formData.Pago) ) {
+  if(!validacionMail.test(formData.email) || formData.Telefono === "" || formData.Direccion === "" || !validacionTarjeta.test(formData.Pago) ) {
     validacionForm = true;
   } else {
     validacionForm = false;
@@ -102,7 +103,7 @@ export default function Cartformu() {
   </div>
   <div className="form-group">
     <label htmlFor="inputAddress">Tarjeta de  Crédito</label>
-    <input type="number" defaultValue={formData.Pago} name="Pago" className="form-control inputForm1" id="inputAddress" placeholder="Visa 4XXXXXXXXX" required="required" />
+    <input type="number" defaultValue={formData.Pago} name="Pago" className="form-control inputForm1" id="inputAddress" placeholder="Visa 4XXXXXXXXXXXX" required="required" />
   </div>
 
 

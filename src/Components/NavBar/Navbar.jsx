@@ -42,7 +42,7 @@ return (
 
 
     </Container>
-    <Navbar.Brand href="#home"><IconNav />BadBadger<IconNav /></Navbar.Brand>
+    <Navbar.Brand as={Link} to="/"><IconNav />BadBadger<IconNav /></Navbar.Brand>
   </Navbar>
  
 </>

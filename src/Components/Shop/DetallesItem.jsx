@@ -30,8 +30,8 @@ export default function DetallesItem({detalle123}) {
                     <div align="right" className="titulos123"><ItemCount test123={iterador} initial={1} onAdd={onAdd} removeItem={onRemove} /></div>
                     
                 </div>
-
+                </>
             )
-        </>
-    )
+        
+    
 }
